@@ -18,7 +18,6 @@ public class IntDataWriter implements DataWriter {
 			value = value >> 8; 
 		    b[index + INTSIZE - i - 1] = (byte) (lSB & 0x000000ff); 
 		}
- 
 	}
 
 	@Override
