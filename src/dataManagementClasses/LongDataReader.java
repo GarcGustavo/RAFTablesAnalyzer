@@ -6,16 +6,32 @@ import interfaces.DataReader;
 
 public class LongDataReader implements DataReader{
 
+	private static final int LONGSIZE = Long.BYTES; 
+	public static final LongDataReader INSTANCE = new LongDataReader(); 
+	
+	private LongDataReader() {}; 
+
 	@Override
-	public Object readDataFromArrayOfBytes(byte[] a, int starting) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long readDataFromArrayOfBytes(byte[] a, int starting) {
+		int value = 0; 
+		int lSB; 
+		for (int i=0; i < LONGSIZE; i++) { 
+			value = value << 8; 
+			lSB = 0x000000ff & a[starting + i];
+			value = value | lSB; 
+		}
+		return (long) Float.intBitsToFloat(value); 
 	}
 
 	@Override
 	public Object readDataFromInputScanner(Scanner input) {
-		// TODO Auto-generated method stub
-		return null;
+		String s = input.nextLine(); 
+		try {
+			Long v = Long.parseLong(s); 
+			return new Long(v); 
+		} catch (Exception e) { 
+			return null; 
+		}
 	}
 
 }

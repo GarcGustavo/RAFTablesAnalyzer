@@ -8,6 +8,8 @@ public class ByteDataReader implements DataReader {
 	
 	private static final int BYTESIZE = Byte.SIZE; 
 	public static final ByteDataReader INSTANCE = new ByteDataReader(); 
+	
+	private ByteDataReader() {}; 
 
 	//THE PARSEBYTE PART MIGHT NEED SOME ADJUSTING SINCE I DON'T KNOW HOW BYTES TO STRING VALUES WORK
 	//TEST LATER BEFORE FINISHING UP, PLEASE TELL ME YOU DIDN'T SPEND 2 HOURS LOOKING FOR THIS ERROR
