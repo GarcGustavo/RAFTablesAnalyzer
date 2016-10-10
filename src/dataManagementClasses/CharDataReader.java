@@ -12,14 +12,8 @@ public class CharDataReader implements DataReader {
 	
 	//Need to fix this, look up how to tell chars from bits
 	public Character readDataFromArrayOfBytes(byte[] b, int index) {
-		int value = 0; 
-		int lSB; 
-		for (int i=0; i < CHARSIZE; i++) { 
-			value = value << 8; 
-			lSB = 0x000000ff & b[index + i];
-			value = value | lSB; 
-		}
-		return value; 
+		char c = (char)(((b[index]&0x00FF)<<8) + (b[index+1]&0x00FF));
+		 return c;
 	}
 	
 	
