@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 import interfaces.DataReader;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class ShortDataReader implements DataReader {
 	
 	private static final int SHORTSIZE = Short.BYTES; 

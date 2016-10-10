@@ -3,6 +3,10 @@ package dataManagementClasses;
 import generalUtilities.DataUtils;
 import interfaces.DataWriter;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class ShortDataWriter implements DataWriter {
 	
 	private static final int SHORTSIZE = Short.BYTES; 
@@ -23,7 +27,7 @@ public class ShortDataWriter implements DataWriter {
 
 	@Override
 	public String toString(Object value) {
-		return String.format(DataUtils.INTEGERFORMAT, (Short) value);
+		return String.format(DataUtils.SHORTFORMAT, (Short) value);
 	}
 
 }

@@ -3,6 +3,10 @@ package dataManagementClasses;
 import generalUtilities.DataUtils;
 import interfaces.DataWriter;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class DoubleDataWriter implements DataWriter{
 	
 	private static final int DOUBLESIZE = Double.BYTES; 

@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 import interfaces.DataReader;
 
+/**
+ * @author 
+ *
+ */
 public class FloatDataReader implements DataReader {
 
 	private static final int FLOATSIZE = Float.BYTES; 

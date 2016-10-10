@@ -6,14 +6,25 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.ArrayList;
 
+/**
+ * @author 
+ *
+ */
 public class TableSchema {
 	private AttributeInSchema[] attrs;   // the attributes
 	private int size;     // number of attributes added
 
+	/**
+	 * @param n
+	 */
 	public TableSchema(int n) { 
 		attrs = new AttributeInSchema[n]; 
 	}
 
+	/**
+	 * @param attr
+	 * @throws IllegalStateException
+	 */
 	public void addAttribute(AttributeInSchema attr) throws IllegalStateException { 
 		if (size == attrs.length)
 			throw new IllegalStateException("Table of attributes is full."); 
@@ -21,25 +32,45 @@ public class TableSchema {
 		size++;
 	}
 
+	/**
+	 * @return number of attributes
+	 */
 	public int getNumberOfAttrs() { 
 		return size; 
 	}
 
+	/**
+	 * @param index
+	 * @return attributes in schema at index
+	 * @throws IndexOutOfBoundsException
+	 */
 	public AttributeInSchema getAttr(int index) throws IndexOutOfBoundsException { 
 		if (index < 0 || index >= size)
 			throw new IndexOutOfBoundsException("getAttr: Index out of bounds: " + index); 
 		return attrs[index]; 
 	}
 
+	/**
+	 * @return validity
+	 */
 	public boolean isValid() { 
 		return false; 
 	}
 
+	/**
+	 * @param n
+	 * @return instance of table schema
+	 */
 	public static TableSchema getInstance(int n) { 
 		// PRE: n is a valid positive integer value
 		return new TableSchema(n); 
 	}
 
+	/**
+	 * @param file
+	 * @return instance of table schema
+	 * @throws IOException
+	 */
 	public static TableSchema getInstance(RandomAccessFile file) throws IOException { 
 		file.seek(0);
 		short nAttrs = file.readShort(); 
@@ -55,6 +86,12 @@ public class TableSchema {
 
 	}
 
+	/**
+	 * saves schema
+	 * @param file
+	 * @throws IllegalStateException
+	 * @throws IOException
+	 */
 	public void saveSchema(RandomAccessFile file) 
 			throws IllegalStateException, IOException { 
 		// Saves this schema into the given RAF, beginning at its current file pointer
@@ -83,6 +120,9 @@ public class TableSchema {
 		return s; 
 	}
 
+	/**
+	 * @return record length
+	 */
 	public int getDataRecordLength() { 
 		int len = 0; 
 
@@ -91,6 +131,10 @@ public class TableSchema {
 		return len; 
 	}
 
+	/**
+	 * @param selectedAttrs
+	 * @return subschema
+	 */
 	public TableSchema getSubschema(ArrayList<Integer> selectedAttrs) { 
 		TableSchema newSchema = new TableSchema(selectedAttrs.size()); 
 

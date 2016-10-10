@@ -4,6 +4,11 @@ import java.security.InvalidParameterException;
 
 import generalUtilities.DataUtils;
 
+
+/**
+ * @author 
+ *
+ */
 public class Date implements Comparable<Date> {
 	private static int NDAYSPERMONTH[] = {31, 28, 31, 30, 31, 30, 
 		                                  31, 31, 30, 31, 30, 31}; 
@@ -12,6 +17,12 @@ public class Date implements Comparable<Date> {
 	private byte month, day; 
 	private short year; 
 	
+	/**
+	 * @param month
+	 * @param day
+	 * @param year
+	 * @throws InvalidParameterException
+	 */
 	public Date(byte month, byte day, short year) throws InvalidParameterException { 
 		if (!DataUtils.isValidDate(month, day, year))
 			throw new InvalidParameterException("Given date is not valid."); 
@@ -20,12 +31,21 @@ public class Date implements Comparable<Date> {
 		this.year = year; 
 		
 	}
+	/**
+	 * @return byte representation of month
+	 */
 	public byte getMonth() {
 		return month;
 	}
+	/**
+	 * @return byte representation of day
+	 */
 	public byte getDay() {
 		return day;
 	}
+	/**
+	 * @return byte representation of year
+	 */
 	public short getYear() {
 		return year;
 	}

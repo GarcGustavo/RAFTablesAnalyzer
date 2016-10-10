@@ -5,8 +5,15 @@ import java.util.Scanner;
 
 import tableCollectionClasses.TableSchema;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class DataFilePopulator {
 
+	/**
+	 * @param args String of the name of desired file to modify or create
+	 */
 	public static void main(String args[]){
 
 		Scanner sc = new Scanner(System.in);

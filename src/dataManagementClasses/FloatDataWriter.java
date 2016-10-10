@@ -3,6 +3,10 @@ package dataManagementClasses;
 import generalUtilities.DataUtils;
 import interfaces.DataWriter;
 
+/**
+ * @author 
+ *
+ */
 public class FloatDataWriter implements DataWriter{
 
 	private static final int FLOATSIZE = Float.BYTES; 

@@ -3,6 +3,10 @@ package dataManagementClasses;
 import generalUtilities.DataUtils;
 import interfaces.DataWriter;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class LongDataWriter implements DataWriter{
 	
 	private static final int LONGSIZE = Long.BYTES; 

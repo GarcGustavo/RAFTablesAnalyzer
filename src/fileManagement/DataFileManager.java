@@ -12,8 +12,18 @@ import tableCollectionClasses.Record;
 import tableCollectionClasses.Table;
 import tableCollectionClasses.TableSchema;
 
+/**
+ * Methods to manipulate random access files
+ * @author Gustavo
+ *
+ */
 public class DataFileManager {
 
+	/**
+	 * Finds specified file
+	 * @param fileName
+	 * @return file
+	 */
 	public static File getFile(String fileName) {
 
 		File directory = new File("InputData");
@@ -25,6 +35,11 @@ public class DataFileManager {
 		return null;
 	}
 	
+	/**
+	 * @param sc scanner used for input
+	 * @param tableData table schema object
+	 * @param File
+	 */
 	public static void populateFile(Scanner sc, TableSchema tableData, File source){
 		try {
 			RandomAccessFile file = new RandomAccessFile(source, "rw");
@@ -41,6 +56,11 @@ public class DataFileManager {
 		}
 	}
 
+	/**
+	 * @param sc scanner
+	 * @param tableData table schema
+	 * @param fileName string
+	 */
 	public static void createRAFile(Scanner sc, TableSchema tableData, String fileName[]){
 
 		System.out.println("File does not exist, creating new file "+ "'"+fileName[0]+"'" +"\n");

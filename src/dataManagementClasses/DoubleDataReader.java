@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 import interfaces.DataReader;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class DoubleDataReader implements DataReader {
 	
 	private static final int DOUBLESIZE = Double.BYTES; 

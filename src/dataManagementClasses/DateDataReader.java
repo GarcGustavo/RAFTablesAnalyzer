@@ -6,6 +6,10 @@ import java.util.Scanner;
 import generalUtilities.DataUtils;
 import interfaces.DataReader;
 
+/**
+ * @author 
+ *
+ */
 public class DateDataReader implements DataReader {
 
 	public static final DateDataReader INSTANCE = new DateDataReader(); 

@@ -4,6 +4,10 @@ import dataManagementClasses.*;
 import interfaces.DataReader;
 import interfaces.DataWriter;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class DataUtils {
 
 	public static int VALUEWIDE = 19;
@@ -11,6 +15,7 @@ public class DataUtils {
 	public static String STRINGFORMAT = "%"+VALUEWIDE + "s"; 
 	public static String CHARFORMAT = "%"+VALUEWIDE + "c"; 
 	public static String INTEGERFORMAT = "%"+VALUEWIDE + "d";
+	public static String SHORTFORMAT = "%"+VALUEWIDE + "d";
 	public static String BOOLEANFORMAT = "%"+VALUEWIDE + "s"; 
 	public static String FLOATFORMAT = "%"+VALUEWIDE + "f";
 	public static String DOUBLEFORMAT = "%"+VALUEWIDE + "f"; 
@@ -27,6 +32,10 @@ public class DataUtils {
 			                             new TYPE("boolean", 1, BooleanDataReader.INSTANCE, BooleanDataWriter.INSTANCE), 
 			                             new TYPE("date", 4, DateDataReader.INSTANCE, DateDataWriter.INSTANCE)}; 
 
+	/**
+	 * @param tName
+	 * @return type ID integer
+	 */
 	public static int getTypeID(String tName) { 
 		for (int i=0; i<TYPEList.length; i++) 
 			if (TYPEList[i].getName().equalsIgnoreCase(tName)) 
@@ -34,12 +43,21 @@ public class DataUtils {
 		return -1; 
 	}
 	
+	/**
+	 * @param tIndex
+	 * @return type name string
+	 * @throws IllegalArgumentException
+	 */
 	public static String getTypeName(int tIndex) throws IllegalArgumentException { 
 		if (tIndex<0 || tIndex > TYPEList.length)
 			throw new IllegalArgumentException("Invalid index for a valid data type."); 
 		return TYPEList[tIndex].getName(); 
 	}
 	
+	/**
+	 * @param tName
+	 * @return Size of specified type
+	 */
 	public static int getTypeSize(String tName) { 
 		for (int i=0; i<TYPEList.length; i++) 
 			if (TYPEList[i].getName().equals(tName)) 
@@ -47,18 +65,30 @@ public class DataUtils {
 		return -1; 
 	}
 
+	/**
+	 * @param index
+	 * @return Size of specified type
+	 */
 	public static int getTypeSize(int index) { 
 		if (index<0 || index > TYPEList.length)
 			throw new IllegalArgumentException("Invalid index for a valid data type."); 
 		return TYPEList[index].getSize(); 
 	}
 
+	/**
+	 * @param index
+	 * @return Data reader for specified type
+	 */
 	public static DataReader getTypeDataReader(int index) { 
 		if (index<0 || index > TYPEList.length)
 			throw new IllegalArgumentException("Invalid index for a valid data type."); 
 		return TYPEList[index].getDataReader(); 		
 	}
 	
+	/**
+	 * @param index
+	 * @return Data writer for specified type
+	 */
 	public static DataWriter getTypeDataWriter(int index) { 
 		if (index<0 || index > TYPEList.length)
 			throw new IllegalArgumentException("Invalid index for a valid data type."); 
@@ -66,10 +96,18 @@ public class DataUtils {
 		
 	}
 	
+	/**
+	 * @param tName
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidDataType(String tName) { 
 		return getTypeID(tName) != -1; 
 	}
 	
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidName(String s) { 
 		s = s.trim(); 
 		if (s.length()==0 || s.length()>256) return false; 
@@ -84,6 +122,10 @@ public class DataUtils {
 		return true; 
 	}
 	
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidInt(String s) { 
 		try { 
 			Integer.parseInt(s); 
@@ -93,6 +135,10 @@ public class DataUtils {
 		}
 	}
 	
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidBoolean(String s) {
 		try {
 			Boolean.parseBoolean(s); 
@@ -102,6 +148,10 @@ public class DataUtils {
 		}
 	}
 	
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidLong(String s) {
 		try {
 			Long.parseLong(s); 
@@ -111,6 +161,11 @@ public class DataUtils {
 		}
 	}
 	
+	
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidShort(String s) {
 		try {
 			Short.parseShort(s);
@@ -120,10 +175,18 @@ public class DataUtils {
 		}
 	}
 
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidChar(String s) {
 		return s.length() == 1; 
 	}
 
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidByte(String s) {
 		try {
 			Byte.parseByte(s); 
@@ -133,6 +196,10 @@ public class DataUtils {
 		}
 	}
 
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidFloat(String s) {
 		try {
 			Float.parseFloat(s); 
@@ -142,6 +209,10 @@ public class DataUtils {
 		}
 	}
 	
+	/**
+	 * @param s
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidDouble(String s) {
 		try {
 			Double.parseDouble(s); 
@@ -152,6 +223,12 @@ public class DataUtils {
 	}
 
 
+	/**
+	 * @param month
+	 * @param day
+	 * @param year
+	 * @return Boolean indicating validity
+	 */
 	public static boolean isValidDate(byte month, byte day, short year) { 
 		if (year < 0)
 			return false;

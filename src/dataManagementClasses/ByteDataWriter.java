@@ -3,6 +3,10 @@ package dataManagementClasses;
 import generalUtilities.DataUtils;
 import interfaces.DataWriter;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class ByteDataWriter implements DataWriter {
 
 	private static final int BYTESIZE = Byte.BYTES; 

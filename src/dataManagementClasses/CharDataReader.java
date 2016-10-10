@@ -4,6 +4,10 @@ import interfaces.DataReader;
 
 import java.util.Scanner;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class CharDataReader implements DataReader {
 	
 	@SuppressWarnings("unused")

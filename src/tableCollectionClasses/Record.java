@@ -4,6 +4,10 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
 
+/**
+ * @author 
+ *
+ */
 public class Record {
 	private byte[] data; 
 	private TableSchema ts; 
@@ -38,6 +42,9 @@ public class Record {
 	}
 	
 	
+	/**
+	 * @param input
+	 */
 	public void readDataRecordFromUser(Scanner input) {
 		for (int i=0; i<ts.getNumberOfAttrs(); i++) { 
 			
@@ -53,6 +60,10 @@ public class Record {
 		}
 	}
 
+	/**
+	 * @param file
+	 * @throws IOException
+	 */
 	public void writeToFile(RandomAccessFile file) throws IOException { 
 		file.write(data);
 	}

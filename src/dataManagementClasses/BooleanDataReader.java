@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 import interfaces.DataReader;
 
+/**
+ * Boolean Data reader
+ * @author 
+ *
+ */
 public class BooleanDataReader implements DataReader {
 
 	public static final BooleanDataReader INSTANCE = new BooleanDataReader(); 

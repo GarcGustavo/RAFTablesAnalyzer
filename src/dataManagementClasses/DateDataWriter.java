@@ -2,6 +2,10 @@ package dataManagementClasses;
 
 import interfaces.DataWriter;
 
+/**
+ * @author 
+ *
+ */
 public class DateDataWriter implements DataWriter {
 
 	public static final DateDataWriter INSTANCE = new DateDataWriter(); 

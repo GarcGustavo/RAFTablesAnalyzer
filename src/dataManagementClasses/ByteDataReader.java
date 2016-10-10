@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 import interfaces.DataReader;
 
+/**
+ * @author 
+ *
+ */
 public class ByteDataReader implements DataReader {
 	
 	private static final int BYTESIZE = Byte.BYTES; 

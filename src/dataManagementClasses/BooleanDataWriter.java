@@ -3,6 +3,10 @@ package dataManagementClasses;
 import generalUtilities.DataUtils;
 import interfaces.DataWriter;
 
+/**
+ * @author 
+ *
+ */
 public class BooleanDataWriter implements DataWriter {
 
 	public static final BooleanDataWriter INSTANCE = new BooleanDataWriter(); 

@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 import interfaces.DataReader;
 
+/**
+ * @author Gustavo
+ *
+ */
 public class LongDataReader implements DataReader{
 
 	private static final int LONGSIZE = Long.BYTES; 
