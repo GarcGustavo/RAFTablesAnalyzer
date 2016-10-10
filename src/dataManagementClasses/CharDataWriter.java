@@ -10,12 +10,11 @@ public class CharDataWriter implements DataWriter{
 	
 	private CharDataWriter() {}; 
 
-	//Need to test/fix writer method
 	@Override
-	public void writeDataToArrayOfBytes(byte[] a, int starting, Object rvalue) {
+	public void writeDataToArrayOfBytes(byte[] b, int index, Object rvalue) {
 		Character value = (Character) rvalue.toString().charAt(0);
 		for (int i=0; i < CHARSIZE; i++) { 
-			a[starting + CHARSIZE - i - 1] = (byte) (value.charValue());
+			b[index + CHARSIZE - i - 1] = (byte) (value.charValue());
 		}
 		
 	}

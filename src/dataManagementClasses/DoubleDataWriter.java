@@ -11,14 +11,14 @@ public class DoubleDataWriter implements DataWriter{
 	private DoubleDataWriter() {}; 
 
 	@Override
-	public void writeDataToArrayOfBytes(byte[] a, int starting, Object rv) {
-		Double v = (Double) rv; 
+	public void writeDataToArrayOfBytes(byte[] b, int index, Object rvalue) {
+		Double v = (Double) rvalue; 
 		long value = Double.doubleToLongBits(v);
 		long lSB;
 		for (int i=0; i < DOUBLESIZE; i++) { 
 			lSB = 0x000000ff & value;
 			value = value >> 8;
-		    a[starting + DOUBLESIZE - i - 1] = (byte) (lSB & 0x000000ff); 
+		    b[index + DOUBLESIZE - i - 1] = (byte) (lSB & 0x000000ff); 
 		}
 	}
 

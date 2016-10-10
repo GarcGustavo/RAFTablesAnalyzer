@@ -10,8 +10,8 @@ public class FloatDataWriter implements DataWriter{
 	
 	private FloatDataWriter() {}; 
 	
-	public void writeDataToArrayOfBytes(byte[] b, int index, Object rv) {
-		Float v = (Float) rv; 
+	public void writeDataToArrayOfBytes(byte[] b, int index, Object rvalue) {
+		Float v = (Float) rvalue; 
 		int value = Float.floatToIntBits(v); 
 		int lSB; 
 		for (int i=0; i < FLOATSIZE; i++) { 

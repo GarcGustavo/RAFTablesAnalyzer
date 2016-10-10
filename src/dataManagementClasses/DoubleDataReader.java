@@ -12,12 +12,12 @@ public class DoubleDataReader implements DataReader {
 	private DoubleDataReader() {}; 
 
 	@Override
-	public Double readDataFromArrayOfBytes(byte[] a, int starting) {
+	public Double readDataFromArrayOfBytes(byte[] b, int index) {
 		long value = 0; 
 		long lSB; 
 		for (int i=0; i < DOUBLESIZE; i++) { 
 			value = value << 8; 
-			lSB = 0x000000ff & a[starting + i];
+			lSB = 0x000000ff & b[index + i];
 			value = value | lSB; 
 		}
 		return Double.longBitsToDouble(value); 

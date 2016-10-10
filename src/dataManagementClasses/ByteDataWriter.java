@@ -11,14 +11,13 @@ public class ByteDataWriter implements DataWriter {
 	public ByteDataWriter() {}
 	
 	@Override
-	public void writeDataToArrayOfBytes(byte[] a, int starting, Object value) {
-		byte byteValue = (byte) value;
+	public void writeDataToArrayOfBytes(byte[] a, int index, Object rvalue) {
+		byte byteValue = (byte) rvalue;
 		for (int i=0; i < BYTESIZE; i++) { 
-		    a[starting + BYTESIZE - i - 1] = byteValue;
+		    a[index + BYTESIZE - i - 1] = byteValue;
 		}
 	}
 
-	//Possible error with format parameters, test throughly
 	@Override
 	public String toString(Object value) {
 		

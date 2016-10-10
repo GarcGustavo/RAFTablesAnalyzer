@@ -34,12 +34,6 @@ public class AttributeInSchema extends Attribute {
 	public int getDataOffset() { 
 		return dataOffset; 
 	}
-
-	/** .. just for testing purposes...
-	public String toString() { 
-		return super.toString()+":"+dataOffset; 
-	}
-	**/
 	
 	public Object readDataValueFromArrayOfBytes(byte[] a, int starting) { 
 		return dataReader.readDataFromArrayOfBytes(a, starting); 

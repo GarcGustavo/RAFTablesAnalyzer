@@ -9,14 +9,14 @@ public class LongDataWriter implements DataWriter{
 	public static final LongDataWriter INSTANCE = new LongDataWriter();
 	
 	@Override
-	public void writeDataToArrayOfBytes(byte[] a, int starting, Object rv) {
-		Long v = (Long) rv;
+	public void writeDataToArrayOfBytes(byte[] b, int index, Object rvalue) {
+		Long v = (Long) rvalue;
 		long value = Long.valueOf(v);
 		long lSB; 
 		for (int i=0; i < LONGSIZE; i++) { 
 			lSB = 0x000000ff & value;
 			value = value >> 8; 
-		    a[starting + LONGSIZE - i - 1] = (byte) (lSB & 0x000000ff); 
+		    b[index + LONGSIZE - i - 1] = (byte) (lSB & 0x000000ff); 
 		}
 	}
 	

@@ -11,13 +11,11 @@ public class ByteDataReader implements DataReader {
 	
 	private ByteDataReader() {}; 
 
-	//THE PARSEBYTE PART MIGHT NEED SOME ADJUSTING SINCE I DON'T KNOW HOW BYTES TO STRING VALUES WORK
-	//TEST LATER BEFORE FINISHING UP, PLEASE TELL ME YOU DIDN'T SPEND 2 HOURS LOOKING FOR THIS ERROR
 	@Override
-	public Byte readDataFromArrayOfBytes(byte[] a, int starting) {
+	public Byte readDataFromArrayOfBytes(byte[] b, int index) {
 		byte value = 0;
 		for (int i=0; i < BYTESIZE; i++) { 
-			value += a[i];
+			value += b[index+i];
 		}
 		return value;
 	}
