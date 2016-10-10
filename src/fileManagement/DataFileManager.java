@@ -36,6 +36,7 @@ public class DataFileManager {
 	}
 	
 	/**
+	 * populates file according to user input
 	 * @param sc scanner used for input
 	 * @param tableData table schema object
 	 * @param File
@@ -57,6 +58,7 @@ public class DataFileManager {
 	}
 
 	/**
+	 * creates a random access file with the appropriate attributes
 	 * @param sc scanner
 	 * @param tableData table schema
 	 * @param fileName string
@@ -76,7 +78,7 @@ public class DataFileManager {
 		String name; 
 
 		while( runningAtt < attNumber ){
-			System.out.println("Please Enter Data Type of Atribute " + (runningAtt+1) + ":\n"
+			System.out.println("Please Enter Data Type of Attribute " + (runningAtt+1) + ":\n"
 					+ " Byte	-	Input: 0\n "
 					+ "Char	-	Input: 1\n "
 					+ "Short	-	Input: 2\n "
@@ -92,7 +94,7 @@ public class DataFileManager {
 			if(type > 8 || type < 0 )
 				System.out.println("Error: Please input values between 0 and 8");
 			else{
-				System.out.println("Please Enter Name of Atribute " + (runningAtt+1) + ":\n");
+				System.out.println("Please Enter Name of Attribute " + (runningAtt+1) + ":\n");
 				name = sc.next();
 				tableData.addAttribute(new AttributeInSchema(name,type,offset));
 				offset =+ offset + DataUtils.getTypeSize(type);
