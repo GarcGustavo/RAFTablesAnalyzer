@@ -14,3 +14,5 @@ Data Structures Project 2 Compilation Instructions:
 	java -classpath bin p2MainClasses.DataFilePopulator 'filename'
 
 	Where 'fileName' is the name of the file to be created or populated.
+	
+	*Github is counting auto-generated javadocs as code percentage, in reality the entire project is made using java*
