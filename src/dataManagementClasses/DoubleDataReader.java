@@ -13,14 +13,14 @@ public class DoubleDataReader implements DataReader {
 
 	@Override
 	public Double readDataFromArrayOfBytes(byte[] a, int starting) {
-		double value = 0; 
-		int lSB; 
+		long value = 0; 
+		long lSB; 
 		for (int i=0; i < DOUBLESIZE; i++) { 
-			value = (int)value << 8; 
+			value = value << 8; 
 			lSB = 0x000000ff & a[starting + i];
-			value = (int)value | lSB; 
+			value = value | lSB; 
 		}
-		return value; 
+		return Double.longBitsToDouble(value); 
 	}
 
 	@Override

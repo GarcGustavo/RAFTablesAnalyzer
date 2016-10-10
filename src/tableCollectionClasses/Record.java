@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
 
-import dataManagementClasses.AttributeInSchema;
-import dataManagementClasses.TableSchema;
-
 public class Record {
 	private byte[] data; 
 	private TableSchema ts; 

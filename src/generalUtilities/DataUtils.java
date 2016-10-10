@@ -6,13 +6,16 @@ import interfaces.DataWriter;
 
 public class DataUtils {
 
-	public static int VALUEWIDE = 12;
+	public static int VALUEWIDE = 19;
+	public static String BYTEFORMAT = "%02X";
 	public static String STRINGFORMAT = "%"+VALUEWIDE + "s"; 
 	public static String CHARFORMAT = "%"+VALUEWIDE + "c"; 
 	public static String INTEGERFORMAT = "%"+VALUEWIDE + "d";
 	public static String BOOLEANFORMAT = "%"+VALUEWIDE + "s"; 
-	public static String FLOATFORMAT = "%"+VALUEWIDE + ".2f"; 
-	public static String DATEFORMAT ="%3s/%02d/%4d"; 
+	public static String FLOATFORMAT = "%"+VALUEWIDE + "f";
+	public static String DOUBLEFORMAT = "%"+VALUEWIDE + "f"; 
+	public static String LONGFORMAT = "%"+VALUEWIDE + "d";
+	public static String DATEFORMAT = "%"+1+"3s/%02d/%4d"; 
 	
 	public static final TYPE[] TYPEList = {new TYPE("byte", Byte.BYTES, ByteDataReader.INSTANCE, ByteDataWriter.INSTANCE), 
 										 new TYPE("char", Character.BYTES, CharDataReader.INSTANCE, CharDataWriter.INSTANCE), 

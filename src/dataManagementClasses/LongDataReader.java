@@ -13,14 +13,14 @@ public class LongDataReader implements DataReader{
 
 	@Override
 	public Long readDataFromArrayOfBytes(byte[] a, int starting) {
-		int value = 0; 
-		int lSB; 
+		long value = 0; 
+		long lSB;
 		for (int i=0; i < LONGSIZE; i++) { 
 			value = value << 8; 
 			lSB = 0x000000ff & a[starting + i];
 			value = value | lSB; 
 		}
-		return (long) Float.intBitsToFloat(value); 
+		return Long.valueOf(value); 
 	}
 
 	@Override

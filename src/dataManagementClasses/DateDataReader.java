@@ -1,8 +1,7 @@
 package dataManagementClasses;
 
+import java.security.InvalidParameterException;
 import java.util.Scanner;
-
-import com.sun.org.apache.xerces.internal.impl.dv.InvalidDateException;
 
 import generalUtilities.DataUtils;
 import interfaces.DataReader;
@@ -13,7 +12,7 @@ public class DateDataReader implements DataReader {
 	
 	private DateDataReader() {}; 
 
-	public Date readDataFromArrayOfBytes(byte[] b, int index) throws InvalidDateException {
+	public Date readDataFromArrayOfBytes(byte[] b, int index) throws InvalidParameterException {
 		return new Date(b[index], b[index+1], ShortDataReader.INSTANCE.readDataFromArrayOfBytes(b, index+2)); 
 	}
 

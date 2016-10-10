@@ -1,8 +1,8 @@
 package dataManagementClasses;
 
-import generalUtilities.DataUtils;
+import java.security.InvalidParameterException;
 
-import InvalidDateException;
+import generalUtilities.DataUtils;
 
 public class Date implements Comparable<Date> {
 	private static int NDAYSPERMONTH[] = {31, 28, 31, 30, 31, 30, 
@@ -12,9 +12,9 @@ public class Date implements Comparable<Date> {
 	private byte month, day; 
 	private short year; 
 	
-	public Date(byte month, byte day, short year) throws InvalidDateException { 
+	public Date(byte month, byte day, short year) throws InvalidParameterException { 
 		if (!DataUtils.isValidDate(month, day, year))
-			throw new InvalidDateException("Given date is not valid."); 
+			throw new InvalidParameterException("Given date is not valid."); 
 		this.month = month; 
 		this.day = day; 
 		this.year = year; 

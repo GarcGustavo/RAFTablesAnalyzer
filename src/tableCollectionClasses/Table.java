@@ -5,9 +5,6 @@ import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import dataManagementClasses.AttributeInSchema;
-import dataManagementClasses.TableSchema;
-
 public class Table {
 	private TableSchema ts; 
 	private ArrayList<Record> rList; 

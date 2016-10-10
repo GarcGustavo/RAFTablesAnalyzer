@@ -5,7 +5,7 @@ import interfaces.DataWriter;
 
 public class ByteDataWriter implements DataWriter {
 
-	private static final int BYTESIZE = Byte.SIZE; 
+	private static final int BYTESIZE = Byte.BYTES; 
 	public static final ByteDataWriter INSTANCE = new ByteDataWriter(); 
 	
 	public ByteDataWriter() {}
@@ -22,7 +22,7 @@ public class ByteDataWriter implements DataWriter {
 	@Override
 	public String toString(Object value) {
 		
-		return String.format("%02X", (Byte) value); 
+		return String.format(DataUtils.BYTEFORMAT, (Byte) value); 
 	}
 
 }

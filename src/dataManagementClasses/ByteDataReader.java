@@ -6,7 +6,7 @@ import interfaces.DataReader;
 
 public class ByteDataReader implements DataReader {
 	
-	private static final int BYTESIZE = Byte.SIZE; 
+	private static final int BYTESIZE = Byte.BYTES; 
 	public static final ByteDataReader INSTANCE = new ByteDataReader(); 
 	
 	private ByteDataReader() {}; 

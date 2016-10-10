@@ -1,4 +1,4 @@
-package dataManagementClasses;
+package tableCollectionClasses;
 
 import generalUtilities.DataUtils;
 
@@ -10,14 +10,15 @@ public class TableSchema {
 	private AttributeInSchema[] attrs;   // the attributes
 	private int size;     // number of attributes added
 	
-	private TableSchema(int n) { 
+	public TableSchema(int n) { 
 		attrs = new AttributeInSchema[n]; 
 	}
 	
 	public void addAttribute(AttributeInSchema attr) throws IllegalStateException { 
 		if (size == attrs.length)
 			throw new IllegalStateException("Table of attributes is full."); 
-		attrs[size++] = attr; 
+		attrs[size] = attr; 
+		size++;
 	}
 	
 	public int getNumberOfAttrs() { 
@@ -72,7 +73,8 @@ public class TableSchema {
 	
 	public String toString() { 
 		String s = "|"; 
-		for (int i=0; i<attrs.length-1; i++) 
+		s += String.format("%"+1+"s", attrs[0].getName()); 
+		for (int i=1; i<attrs.length-1; i++) 
 			s += String.format(DataUtils.STRINGFORMAT, attrs[i].getName()); 
 		s += String.format(DataUtils.STRINGFORMAT, attrs[attrs.length-1].getName())+" |";
 		s += "\n"; 

@@ -1,4 +1,4 @@
-package dataManagementClasses;
+package tableCollectionClasses;
 
 import generalUtilities.DataUtils;
 import interfaces.DataReader;
@@ -7,6 +7,8 @@ import interfaces.DataWriter;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
+
+import dataManagementClasses.Attribute;
 
 public class AttributeInSchema extends Attribute {
 	private int dataOffset;     // offset of its value in the records of table it is part of

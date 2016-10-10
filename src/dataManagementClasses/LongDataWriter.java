@@ -9,19 +9,19 @@ public class LongDataWriter implements DataWriter{
 	public static final LongDataWriter INSTANCE = new LongDataWriter();
 	
 	@Override
-	public void writeDataToArrayOfBytes(byte[] a, int starting, Object value) {
-		Long v = (Long) value;
-		int lSB; 
+	public void writeDataToArrayOfBytes(byte[] a, int starting, Object rv) {
+		Long v = (Long) rv;
+		long value = Long.valueOf(v);
+		long lSB; 
 		for (int i=0; i < LONGSIZE; i++) { 
-			lSB = 0x000000ff & v.intValue();
-			v = v >> 8; 
-		    a[v.intValue() + LONGSIZE - i - 1] = (byte) (lSB & 0x000000ff); 
+			lSB = 0x000000ff & value;
+			value = value >> 8; 
+		    a[starting + LONGSIZE - i - 1] = (byte) (lSB & 0x000000ff); 
 		}
 	}
 	
-	//Need to find equivalent to FLOATFORMAT but for long
 	@Override
 	public String toString(Object value) {
-		return String.format(DataUtils.FLOATFORMAT, (Long) value); 
+		return String.format(DataUtils.LONGFORMAT, (Long) value); 
 	} 
 }
