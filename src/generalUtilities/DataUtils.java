@@ -10,8 +10,9 @@ import interfaces.DataWriter;
  */
 public class DataUtils {
 
+	//Formatting variables used to format data types as strings throughout the program
 	public static int VALUEWIDE = 19;
-	public static String BYTEFORMAT = "%02X";
+	public static String BYTEFORMAT = "%"+VALUEWIDE +"X";
 	public static String STRINGFORMAT = "%"+VALUEWIDE + "s"; 
 	public static String CHARFORMAT = "%"+VALUEWIDE + "c"; 
 	public static String INTEGERFORMAT = "%"+VALUEWIDE + "d";

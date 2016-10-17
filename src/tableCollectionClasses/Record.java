@@ -5,7 +5,7 @@ import java.io.RandomAccessFile;
 import java.util.Scanner;
 
 /**
- * @author 
+ * @author Gustavo
  *
  */
 public class Record {
@@ -79,6 +79,4 @@ public class Record {
 		}
 		return s; 
 	}
-
-	
 }

@@ -98,4 +98,8 @@ public class Table {
 		}
 
 	}
+	
+	public ArrayList<Record> getRecordList(){
+		return rList;
+	}
 }
