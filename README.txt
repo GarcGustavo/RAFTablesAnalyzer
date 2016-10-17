@@ -2,23 +2,23 @@ Author: Gustavo A. Reyes
 
 Data Structures Project 2 Compilation Instructions:
 
-|===============================================================================================================|
+|=========================================================================================================|
  - Eclipse - 
 	
 	[DataFilePopulator]
 	
-	Right click the DataFilePopulator class and choose Run_as-->Run_configuration and choose the arguments tab,
-	in the arguments tab specify the filename of a file you wish to populate or create and click 'Run'.
+	Right click the DataFilePopulator class and choose Run_as-->Run_configuration and choose the arguments
+	tab, in the arguments tab specify the name of a file you wish to populate or create and click 'Run'.
 	(Note that bytes are shown as hexa-decimals on created tables)
 	
 	[TableAnalyzer]
 	
-	Right click the TableAnalyzer class and choose Run_as-->Run_configuration and choose the arguments tab,
-	in the arguments tab specify the filename of a file you wish to populate or create and click 'Run'.
+	Right click the TableAnalyzer class and choose Run_as-->Run_configuration and choose the arguments 
+	tab, in the arguments tab specify the name of a file you wish to populate or create and click 'Run'.
 	
 	Make sure you're running the appropriate main class when running the programs!
 
-|===============================================================================================================|
+|=========================================================================================================|
 
  - Command Line -
 	
@@ -34,4 +34,4 @@ Data Structures Project 2 Compilation Instructions:
 
 	Where 'fileName' is the name of the file to be created or populated.
 	
-|===============================================================================================================|
+|=========================================================================================================|
